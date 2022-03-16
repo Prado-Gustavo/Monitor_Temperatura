@@ -4,3 +4,4 @@ Equipe
 * Gustavo Prado   - Firmware
 * Richard Matheus - Projeto digital
 * Murilo Duarte   - Documentação
+* José Pereira    - Orientador
