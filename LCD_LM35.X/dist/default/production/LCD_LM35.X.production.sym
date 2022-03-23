@@ -9,6 +9,7 @@ ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 0 0 CODE 0
 reset_vec 0 0 CODE 0
+_ANSEL 188 0 ABS 0
 wtemp0 7E 0 ABS 0
 __Hconfig 0 0 CONFIG 0
 __Lconfig 0 0 CONFIG 0
@@ -21,8 +22,10 @@ __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 ___int_sp 0 0 STACK 2
+_ADRESH 1E 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
+_ADRESL 9E 0 ABS 0
 __Hsfr0 0 0 ABS 0
 __Lsfr0 0 0 ABS 0
 __Hsfr1 0 0 ABS 0
@@ -72,6 +75,8 @@ __Lcinit 7FC 0 CODE 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
+_ADCON0bits 1F 0 ABS 0
+_ADCON1bits 9F 0 ABS 0
 __Hend_init 3 0 CODE 0
 __Lend_init 0 0 CODE 0
 __Hreset_vec 0 0 CODE 0
@@ -96,12 +101,12 @@ cinit FF8 FFF CODE FF8 0
 maintext FF2 FF7 CODE FF2 0
 %locals
 dist/default/production\LCD_LM35.X.production.o
-C:\Users\21193444\AppData\Local\Temp\s95c.
-406 7FC 0 CODE 0
-409 7FC 0 CODE 0
-415 7FC 0 CODE 0
-417 7FC 0 CODE 0
-418 7FD 0 CODE 0
+C:\Users\21193444\AppData\Local\Temp\saso.
+572 7FC 0 CODE 0
+575 7FC 0 CODE 0
+581 7FC 0 CODE 0
+583 7FC 0 CODE 0
+584 7FD 0 CODE 0
 LM35.c
 11 7F9 0 CODE 0
 12 7F9 0 CODE 0
