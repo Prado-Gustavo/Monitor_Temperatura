@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.00\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\LCD_LM35.X.production.sym \
   --cmf=dist/default/production\LCD_LM35.X.production.cmf -z -Q16F887 \
-  -oC:\Users\21193444\AppData\Local\Temp\s95c.2 \
+  -oC:\Users\21193444\AppData\Local\Temp\saso.2 \
   -Mdist/default/production/LCD_LM35.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\21193444\AppData\Local\Temp\s95c.o \
+  -DENTRY=2 -k C:\Users\21193444\AppData\Local\Temp\saso.o \
   dist/default/production\LCD_LM35.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\21193444\AppData\Local\Temp\s95c.o
+C:\Users\21193444\AppData\Local\Temp\saso.o
                 end_init                              0        0        3        0       0
 dist/default/production\LCD_LM35.X.production.o
                 cinit                               7FC      7FC        4      FF8       0
@@ -121,6 +121,11 @@ UNUSED ADDRESS RANGES
 
                                   Symbol Table
 
+_ADCON0bits              (abs)        001F
+_ADCON1bits              (abs)        009F
+_ADRESH                  (abs)        001E
+_ADRESL                  (abs)        009E
+_ANSEL                   (abs)        0188
 __Habs1                  abs1         0000
 __Hbank0                 bank0        0000
 __Hbank1                 bank1        0000

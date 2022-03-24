@@ -14,7 +14,7 @@
 $dist/default/production\LCD_LM35.X.production.o
 cinit CODE 0 7FC 7FC 4 2
 maintext CODE 0 7F9 7F9 3 2
-$C:\Users\21193444\AppData\Local\Temp\s95c.o
+$C:\Users\21193444\AppData\Local\Temp\saso.o
 end_init CODE 0 0 0 3 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -63,11 +63,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\LCD_LM35.X.production.o
-7FC cinit CODE >406:C:\Users\21193444\AppData\Local\Temp\s95c.
-7FC cinit CODE >409:C:\Users\21193444\AppData\Local\Temp\s95c.
-7FC cinit CODE >415:C:\Users\21193444\AppData\Local\Temp\s95c.
-7FC cinit CODE >417:C:\Users\21193444\AppData\Local\Temp\s95c.
-7FD cinit CODE >418:C:\Users\21193444\AppData\Local\Temp\s95c.
+7FC cinit CODE >572:C:\Users\21193444\AppData\Local\Temp\saso.
+7FC cinit CODE >575:C:\Users\21193444\AppData\Local\Temp\saso.
+7FC cinit CODE >581:C:\Users\21193444\AppData\Local\Temp\saso.
+7FC cinit CODE >583:C:\Users\21193444\AppData\Local\Temp\saso.
+7FD cinit CODE >584:C:\Users\21193444\AppData\Local\Temp\saso.
 7F9 maintext CODE >11:Z:\MPLAB\LCD_LM35.X\LM35.c
 7F9 maintext CODE >12:Z:\MPLAB\LCD_LM35.X\LM35.c
 7F9 maintext CODE >13:Z:\MPLAB\LCD_LM35.X\LM35.c
@@ -90,24 +90,26 @@ __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\21193444\AppData\Local\Temp\s95c.o
+___sp 0 0 STACK 2 stack C:\Users\21193444\AppData\Local\Temp\saso.o
 _main FF2 0 CODE 0 maintext dist/default/production\LCD_LM35.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
-start 0 0 CODE 0 init C:\Users\21193444\AppData\Local\Temp\s95c.o
+start 0 0 CODE 0 init C:\Users\21193444\AppData\Local\Temp\saso.o
 __size_of_main 0 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\s95c.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\s95c.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\s95c.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\s95c.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\s95c.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\s95c.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\saso.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\saso.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\saso.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\saso.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\saso.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\21193444\AppData\Local\Temp\saso.o
 wtemp0 7E 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
+_ADRESH 1E 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
+_ADRESL 9E 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 start_initialization FF8 0 CODE 0 cinit dist/default/production\LCD_LM35.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\21193444\AppData\Local\Temp\s95c.o
+___int_sp 0 0 STACK 2 stack C:\Users\21193444\AppData\Local\Temp\saso.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -147,12 +149,14 @@ __S1 0 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\21193444\AppData\Local\Temp\s95c.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\21193444\AppData\Local\Temp\saso.o
 __pmaintext FF2 0 CODE 0 maintext dist/default/production\LCD_LM35.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 0 config -
-stackhi 0 0 ABS 0 - C:\Users\21193444\AppData\Local\Temp\s95c.o
-stacklo 0 0 ABS 0 - C:\Users\21193444\AppData\Local\Temp\s95c.o
+stackhi 0 0 ABS 0 - C:\Users\21193444\AppData\Local\Temp\saso.o
+stacklo 0 0 ABS 0 - C:\Users\21193444\AppData\Local\Temp\saso.o
+_ADCON0bits 1F 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
+_ADCON1bits 9F 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -172,6 +176,7 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production\LCD_LM35.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
 __end_of_main FF8 0 CODE 0 maintext dist/default/production\LCD_LM35.X.production.o
+_ANSEL 188 0 ABS 0 - dist/default/production\LCD_LM35.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __initialization FF8 0 CODE 0 cinit dist/default/production\LCD_LM35.X.production.o
