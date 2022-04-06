@@ -6,13 +6,12 @@
 * Murilo Duarte   - Documentação
 * José Pereira    - Orientador  
 ------------------------------------------------------------//-----------------------------------------------------------
-
-                                                     Introdução
-No mundo atual, vários aparelhos eletrônicos ou equipamentos que estão no nosso dia a dia, existem para nos informar ou ilustrar informaçoes e o LM- 35 veio para nos deixar atenuado no dia a dia. Os equipamentos que pussui o LM-35 serve para  medir a temperatura, e um dos equipamentos eletronicos que o LM- 35 é integrado, é o ar condicionado, gerenciamento de baterias e outros aparelho na area industriais ou residencial . Existe vários outros equipamentos que funciona em uma área critica, como o caso do ar condicionado, portanto os hospitais ou ate mesmo restaurante que precisa de um componente desse tipo. A aplicação dele e bem simples e podendo auxiliar muito. O Leitor de temperatura utilizado display LCD, ele é um projeto que veio para ilustrar a temperatura em um LCD, mostrando os números e a unidade de medida, sendo funcional. Para fazer este projeto precisamos de vários componente como um microcontrolador, um LCD e para saber mais, e necessário ler o projeto pois estará mais explicativo e mostrara todo o processo para compreender o projeto final. 
+# Introdução
+No mundo atual, tem vários componentes ou aparelhos no nosso dia a dia que serve para nos deixar informado sobre as coisas que acontece no cotidiano, e este projeto falara sobre a importância da temperatura e sobre o controlador de temperatura lido pelo sensor LM-35. A temperatura é muito importante, pois tem muitas maquinas e lugares criticos que precisa ser avisado sobre o calor do ambiente para prevenção de algum equipamento ou para o conforto da temperatura para os seres vivos. O controlador de temperatura ele tem uma tela LCD aonde mostra a temperatura na sua unidade de media como °C (grau celsius) ou °F (fahrenheit) portanto assim 
 
 ------------------------------------------------------------//-----------------------------------------------------------
 
-                                                  O que e sensor 
+## O que e sensor 
  Os sensores são componentes que consegue nos informar sobre determinada coisas do dia a dia, como eles na indústria, comercial e residencial. São utilizados para nos auxiliar e identificar todas as tarefas que esta sendo executada, eles consegue reagir a mudanças de temperatura, distancia, cor, som, velocidade, posicionamento , vibrações e etc. Isso varia muito para cada utilização, pois cada execução os processos são diferentes, portando tem que saber lidar e escolher sensores de especifico funcionalidade para que a execução seja perfeita e funcional. Os sensores acaba gerando um sinal elétrico que pode ser analógico ou digital, sendo uma saída ou entrada isso depende muito da forma de ligações para o processo, portanto o sinal o qual é enviado para um microcontrolador esse sistema interpreta e faz o que foi programado. Os tipos de sensores são eles: Fotoelétricos, acústicos, magnéticos, elétricos, térmicos, capacitivos , pressão
  ![Isso é uma imagem](![image](https://user-images.githubusercontent.com/88776127/161050897-636e7124-d012-4e44-ab9f-8773d3e0c6e8.png)
 
