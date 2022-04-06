@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>LCD_LM35</name>
+            <name>Monitor_Temperatura</name>
             <creation-uuid>d2295232-d3c1-4ff0-98ef-714648690c92</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
