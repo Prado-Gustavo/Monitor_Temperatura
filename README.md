@@ -7,7 +7,7 @@
 * José Pereira    - Orientador  
 
 # Introdução
-No mundo atual, tem vários componentes ou aparelhos no nosso dia a dia que serve para nos deixar informado sobre as coisas que acontece no cotidiano, e este projeto falara sobre a importância da temperatura e sobre o controlador de temperatura lido pelo sensor LM-35. A temperatura é muito importante, pois tem muitas maquinas e lugares criticos que precisa ser avisado sobre o calor do ambiente para prevenção de algum equipamento ou para o conforto da temperatura para os seres vivos. O controlador de temperatura ele tem uma tela LCD aonde mostra a temperatura na sua unidade de media como °C (grau celsius) ou °F (fahrenheit) portanto assim 
+No mundo atual, tem vários componentes ou aparelhos no nosso dia a dia que serve para nos deixar informado sobre as coisas que acontece no cotidiano, e este projeto falara sobre a importância da temperatura e sobre o controlador de temperatura lido pelo sensor LM-35. A temperatura é muito importante, pois tem muitas maquinas e lugares criticos que precisa ser avisado sobre o calor do ambiente para prevenção de algum equipamento ou para o conforto da temperatura para os seres vivos. O controlador de temperatura ele tem uma tela LCD aonde mostra a temperatura na sua unidade de media como °C (grau celsius) ou °F (fahrenheit) portanto assim sendo funcional e para diversas situações. 
 
 
 ## O que e sensor 
