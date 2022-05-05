@@ -7,13 +7,16 @@
 * José Pereira    - Orientador  
 
 # Introdução
-No mundo atual, tem vários componentes ou aparelhos no nosso dia a dia que serve para nos deixar informado sobre as coisas que acontece no cotidiano, e este projeto falara sobre a importância da temperatura e sobre o controlador de temperatura lido pelo sensor LM-35. A temperatura é muito importante, pois tem muitas maquinas e lugares criticos que precisa ser avisado sobre o calor do ambiente para prevenção de algum equipamento ou para o conforto da temperatura para os seres vivos. O controlador de temperatura ele tem uma tela LCD aonde mostra a temperatura na sua unidade de media como °C (grau celsius) ou °F (fahrenheit) portanto assim sendo funcional e para diversas situações. 
+No mundo atual, á vários componentes ou aparelhos no nosso dia a dia que serve para nos deixar informado sobre as coisas que acontece no cotidiano, e este projeto falara sobre a importância da temperatura e sobre o controlador de temperatura lido pelo sensor LM-35. A temperatura é muito importante, pois tem muitas maquinas e lugares criticos que precisa ser avisado sobre o calor do ambiente para prevenção de algum equipamento ou para o conforto da temperatura para os seres vivos. O controlador de temperatura ele tem uma tela LCD aonde mostra a temperatura na sua unidade de media como °C (grau celsius) ou °F (fahrenheit) portanto assim sendo funcional e para diversas situações. 
 
 
 ## O que e sensor 
- Os sensores são componentes que consegue nos informar sobre determinada coisas do dia a dia, como eles na indústria, comercial e residencial. São utilizados para nos auxiliar e identificar todas as tarefas que esta sendo executada, eles consegue reagir a mudanças de temperatura, distancia, cor, som, velocidade, posicionamento , vibrações e etc. Isso varia muito para cada utilização, pois cada execução os processos são diferentes, portando tem que saber lidar e escolher sensores de especifico funcionalidade para que a execução seja perfeita e funcional. Os sensores acaba gerando um sinal elétrico que pode ser analógico ou digital, sendo uma saída ou entrada isso depende muito da forma de ligações para o processo, portanto o sinal o qual é enviado para um microcontrolador esse sistema interpreta e faz o que foi programado. Os tipos de sensores são eles: Fotoelétricos, acústicos, magnéticos, elétricos, térmicos, capacitivos , pressão
- ![Isso é uma imagem](![image](https://user-images.githubusercontent.com/88776127/161050897-636e7124-d012-4e44-ab9f-8773d3e0c6e8.png)
-
+ Os sensores são componentes que consegue nos informar sobre determinada coisas do dia a dia, como eles na indústria, comercial e residencial. São utilizados para nos auxiliar e identificar todas as tarefas que esta sendo executada, eles consegue reagir a mudanças de temperatura, distancia, cor, som, velocidade, posicionamento , vibrações e etc. Isso varia muito para cada utilização, pois cada execução os processos são diferentes, portando tem que saber lidar e escolher sensores de especifico funcionalidade para que a execução seja perfeita e funcional. Os sensores acaba gerando um sinal elétrico que pode ser analógico ou digital, sendo uma saída ou entrada isso depende muito da forma de ligações para o processo, portanto o sinal o qual é enviado para um microcontrolador esse sistema interpreta e faz o que foi programado. Os tipos de sensores são eles: Fotoelétricos, acústicos, magnéticos, elétricos, térmicos, capacitivos , pressão.
+ 
+ | Figura 1: Sensores diversos |
+ |:--:|
+ |![sensores diversos](https://user-images.githubusercontent.com/88776127/161050897-636e7124-d012-4e44-ab9f-8773d3e0c6e8.png)|
+ | Fonte: Multicomercial |
     
 
 ## Sensor de temperatura-LM35
@@ -53,48 +56,42 @@ O amplificador operacional (ou amp. op.) é um componente eletrônico que, como 
 
 
                                           Mapeamento dos pino 
-|pino|PORT|Função| 		
-|---:|:--:|:--:|
-| 1 | RE3 | |
-| 2 | RA0 | Sensor-1 |
-| 3 | RA1 | Sensor-2 |
-| 4 | RA2 | Sensor-3 |
-| 5 | RA3 | Sensor-4 |
-| 6 | RA4 |  |
-| 7 | RA5 |  |
-| 8 | RE0 |  |
-| 9 | RE1 |  |
-| 10 | RE2 | |
-|  11| VDD |  |
-| 12 | VSS |  |
-| 13 | RA7 |  |
-| 14 | RA6 | |
-| 15 | RC0 | |
-| 16 | RC1 |  |
-| 17 | RC2 |  |
-| 18 | RC3 |  |
-| 19 | RD0 | D5 LCD |
-| 20 | RD1 | D4 LCD |
-| 21 | RD2 | D6 LCD |
-| 22 | RD3 | D7 LCD |
-| 23 | RC4 |  |
-| 24 | RC5 | |
-| 25 | RC6 | |
-| 26 | RC7 | |
-| 27 | RD4 | RS LCD |
-| 28 | RD5 | EN LCD |
-|  29| RD6 |  |
-|  30| RD7 |  |
-|  31| VSS  |
-| 32 | VDD |  |
-|  33| RB0 |  |
-|  34| RB1 |  |
-|  35| RB2 |  |
-|  36| RB3 |  |
-|  37| RB4 |  |
-|  38| RB5 |  |
-|  39| RB6 |  |
-|  40| RB7 |  |
+
+
+|pino|PORT|Função| |pino|PORT|Função| |pino|PORT|Função|         |pino|PORT|Função|  	  		
+|:--:|:--:|:--:|--|:---:|:--:|:--:|   --|:---:|:--:|:--:|        --|:---:|:--:|:--:|
+| 1 | RE3 | ||  11| VDD |  |          | 21 | RD2 | D6 LCD |      |  31| VSS  |
+| 2 | RA0 | Sensor-1 | | 12 | VSS |  || 22 | RD3 | D7 LCD |      | 32 | VDD |  |
+| 3 | RA1 | Sensor-2 | | 13 | RA7 |  || 23 | RC4 |  |            |  33| RB0 |  |
+| 4 | RA2 | Sensor-3 | | 14 | RA6 | | | 24 | RC5 | |             |  34| RB1 |  |
+| 5 | RA3 | Sensor-4 | | 15 | RC0 | | | 25 | RC6 | |             |  35| RB2 |  |
+| 6 | RA4 |  | | 16 | RC1 |  |        | 26 | RC7 | |             |  36| RB3 |  |
+| 7 | RA5 |  | | 17 | RC2 |  |        | 27 | RD4 | RS LCD |      |  37| RB4 |  |
+| 8 | RE0 |  | | 18 | RC3 |  |        | 28 | RD5 | EN LCD |      |  38| RB5 |  |
+| 9 | RE1 |  | | 19 | RD0 | D5 LCD |  |  29| RD6 |  |            |  39| RB6 |  |
+| 10 | RE2 | | | 20 | RD1 | D4 LCD |  |  30| RD7 |  |            |  40| RB7 |  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
