@@ -2560,6 +2560,7 @@ struct sensor_t
 
 
 void sensor_init (struct sensor_t *ptr, char ch, int tmin, int tmax, int alvo, char aceitavel, char toleravel);
+char sensor_value (struct sensor_t *ptr);
 void sensor_read (struct sensor_t *ptr, char ch);
 void sensor_readAll (struct sensor_t *ptr, char n);
 void sensor_setAlert (struct sensor_t * ptr, char p);
@@ -2593,21 +2594,38 @@ unsigned char tecla_decrementar_subida (void);
 unsigned char tecla_decrementar_descida (void);
 # 14 "main.c" 2
 
+# 1 "./fmm.h" 1
+# 13 "./fmm.h"
+int fmm_add( int valor );
+int fmm_media( void );
+
+int fmm_add1( int valor );
+int fmm_media1( void );
+
+int fmm_add2( int valor );
+int fmm_media2( void );
+
+int fmm_add3( int valor );
+int fmm_media3( void );
+# 15 "main.c" 2
+
 
 struct sensor_t sensor[4];
 int canal;
 
+
 void main(void)
 {
+    long refresh = 1;
     analog_init();
     lcd_init();
     led_init();
     teclas_init();
 
-    sensor_init(sensor, 0, 0, 100, 25, 20, 40);
-    sensor_init(sensor, 1, 0, 100, 25, 20, 40);
-    sensor_init(sensor, 2, 0, 100, 25, 20, 40);
-    sensor_init(sensor, 3, 0, 100, 25, 20, 40);
+      sensor_init(sensor, 0, 0, 100, 25, 20, 40);
+        sensor_init(sensor, 1, 0, 100, 25, 20, 40);
+        sensor_init(sensor, 2, 0, 100, 25, 20, 40);
+        sensor_init(sensor, 3, 0, 100, 25, 20, 40);
 
     while(1)
     {
@@ -2616,10 +2634,20 @@ void main(void)
 
         sensor_readAll(sensor, 4);
 
+        fmm_add (sensor[0].Valor);
+        fmm_add1(sensor[1].Valor);
+        fmm_add2(sensor[2].Valor);
+        fmm_add3(sensor[3].Valor);
+
         lcd_num(0,14, (int)canal, 1 );
-        lcd_num(1, 8, sensor[canal].Valor, 3);
-
-
+        if( !--refresh )
+        {
+            refresh = 50;
+            lcd_num(1, 8, fmm_media (), 3);
+            lcd_num(1, 8, fmm_media1(), 3);
+            lcd_num(1, 8, fmm_media2(), 3);
+            lcd_num(1, 8, fmm_media3(), 3);
+        }
 
         if (tecla_incrementar_subida() )
         {
@@ -2629,6 +2657,8 @@ void main(void)
         {
             canal = --canal % 4;
         }
+
+
         for( char i=0; i<4; i++ )
             led_monitorar(&sensor[i]);
     }

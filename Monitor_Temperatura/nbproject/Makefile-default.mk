@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=analog.c lcd.c sensor.c main.c led.c teclas.c
+SOURCEFILES_QUOTED_IF_SPACED=analog.c lcd.c sensor.c main.c led.c teclas.c fmm.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/analog.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/led.p1 ${OBJECTDIR}/teclas.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/analog.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/sensor.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/led.p1.d ${OBJECTDIR}/teclas.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/analog.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/led.p1 ${OBJECTDIR}/teclas.p1 ${OBJECTDIR}/fmm.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/analog.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/sensor.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/led.p1.d ${OBJECTDIR}/teclas.p1.d ${OBJECTDIR}/fmm.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/analog.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/led.p1 ${OBJECTDIR}/teclas.p1
+OBJECTFILES=${OBJECTDIR}/analog.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/sensor.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/led.p1 ${OBJECTDIR}/teclas.p1 ${OBJECTDIR}/fmm.p1
 
 # Source Files
-SOURCEFILES=analog.c lcd.c sensor.c main.c led.c teclas.c
+SOURCEFILES=analog.c lcd.c sensor.c main.c led.c teclas.c fmm.c
 
 
 CFLAGS=
@@ -135,6 +135,13 @@ ${OBJECTDIR}/teclas.p1: teclas.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/teclas.p1 teclas.c 
 	@${FIXDEPS} ${OBJECTDIR}/teclas.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/fmm.p1: fmm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/fmm.p1.d 
+	@${RM} ${OBJECTDIR}/fmm.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/fmm.p1 fmm.c 
+	@${FIXDEPS} ${OBJECTDIR}/fmm.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/analog.p1: analog.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -177,6 +184,13 @@ ${OBJECTDIR}/teclas.p1: teclas.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/teclas.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/teclas.p1 teclas.c 
 	@${FIXDEPS} ${OBJECTDIR}/teclas.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/fmm.p1: fmm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/fmm.p1.d 
+	@${RM} ${OBJECTDIR}/fmm.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/fmm.p1 fmm.c 
+	@${FIXDEPS} ${OBJECTDIR}/fmm.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -26,12 +26,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./lcd.h
 [; ;./lcd.h: 7: void lcd_print (unsigned char lin, unsigned char col, const char *str);
 [v _lcd_print `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
-"19 ./sensor.h
-[; ;./sensor.h: 19: void sensor_readAll (struct sensor_t *ptr, char n);
+"20 ./sensor.h
+[; ;./sensor.h: 20: void sensor_readAll (struct sensor_t *ptr, char n);
 [v _sensor_readAll `(v ~T0 @X0 0 ef2`*S138`uc ]
+"13 ./fmm.h
+[; ;./fmm.h: 13: int fmm_add( int valor );
+[v _fmm_add `(i ~T0 @X0 0 ef1`i ]
+"16
+[; ;./fmm.h: 16: int fmm_add1( int valor );
+[v _fmm_add1 `(i ~T0 @X0 0 ef1`i ]
+"19
+[; ;./fmm.h: 19: int fmm_add2( int valor );
+[v _fmm_add2 `(i ~T0 @X0 0 ef1`i ]
+"22
+[; ;./fmm.h: 22: int fmm_add3( int valor );
+[v _fmm_add3 `(i ~T0 @X0 0 ef1`i ]
 "8 ./lcd.h
 [; ;./lcd.h: 8: void lcd_num (unsigned char lin, unsigned char col, int num, unsigned char tam);
 [v _lcd_num `(v ~T0 @X0 0 ef4`uc`uc`i`uc ]
+"14 ./fmm.h
+[; ;./fmm.h: 14: int fmm_media( void );
+[v _fmm_media `(i ~T0 @X0 0 ef ]
+"17
+[; ;./fmm.h: 17: int fmm_media1( void );
+[v _fmm_media1 `(i ~T0 @X0 0 ef ]
+"20
+[; ;./fmm.h: 20: int fmm_media2( void );
+[v _fmm_media2 `(i ~T0 @X0 0 ef ]
+"23
+[; ;./fmm.h: 23: int fmm_media3( void );
+[v _fmm_media3 `(i ~T0 @X0 0 ef ]
 "8 ./teclas.h
 [; ;./teclas.h: 8: unsigned char tecla_incrementar_subida (void);
 [v _tecla_incrementar_subida `(uc ~T0 @X0 0 ef ]
@@ -299,115 +323,153 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x BOR4V = BOR40V ]
 "21
 [p x WRT = OFF ]
-"16 main.c
-[; ;main.c: 16: struct sensor_t sensor[4];
+"17 main.c
+[; ;main.c: 17: struct sensor_t sensor[4];
 [v _sensor `S138 ~T0 @X0 -> 4 `i e ]
-"17
-[; ;main.c: 17: int canal;
+"18
+[; ;main.c: 18: int canal;
 [v _canal `i ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"19
-[; ;main.c: 19: void main(void)
+"21
+[; ;main.c: 21: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"20
-[; ;main.c: 20: {
+"22
+[; ;main.c: 22: {
 {
 [e :U _main ]
 [f ]
-"21
-[; ;main.c: 21:     analog_init();
-[e ( _analog_init ..  ]
-"22
-[; ;main.c: 22:     lcd_init();
-[e ( _lcd_init ..  ]
 "23
-[; ;main.c: 23:     led_init();
-[e ( _led_init ..  ]
+[; ;main.c: 23:     long refresh = 1;
+[v _refresh `l ~T0 @X0 1 a ]
+[e = _refresh -> -> 1 `i `l ]
 "24
-[; ;main.c: 24:     teclas_init();
-[e ( _teclas_init ..  ]
+[; ;main.c: 24:     analog_init();
+[e ( _analog_init ..  ]
+"25
+[; ;main.c: 25:     lcd_init();
+[e ( _lcd_init ..  ]
 "26
-[; ;main.c: 26:     sensor_init(sensor, 0, 0, 100, 25, 20, 40);
-[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 0 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
+[; ;main.c: 26:     led_init();
+[e ( _led_init ..  ]
 "27
-[; ;main.c: 27:     sensor_init(sensor, 1, 0, 100, 25, 20, 40);
-[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 1 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
-"28
-[; ;main.c: 28:     sensor_init(sensor, 2, 0, 100, 25, 20, 40);
-[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 2 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
+[; ;main.c: 27:     teclas_init();
+[e ( _teclas_init ..  ]
 "29
-[; ;main.c: 29:     sensor_init(sensor, 3, 0, 100, 25, 20, 40);
-[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 3 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
+[; ;main.c: 29:       sensor_init(sensor, 0, 0, 100, 25, 20, 40);
+[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 0 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
+"30
+[; ;main.c: 30:         sensor_init(sensor, 1, 0, 100, 25, 20, 40);
+[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 1 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
 "31
-[; ;main.c: 31:     while(1)
-[e :U 141 ]
+[; ;main.c: 31:         sensor_init(sensor, 2, 0, 100, 25, 20, 40);
+[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 2 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
 "32
-[; ;main.c: 32:     {
-{
-"33
-[; ;main.c: 33:         _delay((unsigned long)((5)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 32:         sensor_init(sensor, 3, 0, 100, 25, 20, 40);
+[e ( _sensor_init (4 , , , , , , &U _sensor -> -> 3 `i `uc -> 0 `i -> 100 `i -> 25 `i -> -> 20 `i `uc -> -> 40 `i `uc ]
 "34
-[; ;main.c: 34:         lcd_print(0, 0, "Temp. Sensor:   ");
-[e ( _lcd_print (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 1C ]
-"36
-[; ;main.c: 36:         sensor_readAll(sensor, 4);
-[e ( _sensor_readAll (2 , &U _sensor -> -> 4 `i `uc ]
-"38
-[; ;main.c: 38:         lcd_num(0,14, (int)canal, 1 );
-[e ( _lcd_num (4 , , , -> -> 0 `i `uc -> -> 14 `i `uc _canal -> -> 1 `i `uc ]
-"39
-[; ;main.c: 39:         lcd_num(1, 8, sensor[canal].Valor, 3);
-[e ( _lcd_num (4 , , , -> -> 1 `i `uc -> -> 8 `i `uc . *U + &U _sensor * -> -> _canal `ui `ux -> -> # *U &U _sensor `ui `ux 1 -> -> 3 `i `uc ]
-"43
-[; ;main.c: 43:         if (tecla_incrementar_subida() )
-[e $ ! != -> ( _tecla_incrementar_subida ..  `i -> 0 `i 143  ]
-"44
-[; ;main.c: 44:         {
+[; ;main.c: 34:     while(1)
+[e :U 141 ]
+"35
+[; ;main.c: 35:     {
 {
-"45
-[; ;main.c: 45:             canal = ++canal % 4;
-[e = _canal % =+ _canal -> 1 `i -> 4 `i ]
+"36
+[; ;main.c: 36:         _delay((unsigned long)((5)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"37
+[; ;main.c: 37:         lcd_print(0, 0, "Temp. Sensor:   ");
+[e ( _lcd_print (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 1C ]
+"39
+[; ;main.c: 39:         sensor_readAll(sensor, 4);
+[e ( _sensor_readAll (2 , &U _sensor -> -> 4 `i `uc ]
+"41
+[; ;main.c: 41:         fmm_add (sensor[0].Valor);
+[e ( _fmm_add (1 . *U + &U _sensor * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensor `ui `ux 1 ]
+"42
+[; ;main.c: 42:         fmm_add1(sensor[1].Valor);
+[e ( _fmm_add1 (1 . *U + &U _sensor * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensor `ui `ux 1 ]
+"43
+[; ;main.c: 43:         fmm_add2(sensor[2].Valor);
+[e ( _fmm_add2 (1 . *U + &U _sensor * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensor `ui `ux 1 ]
+"44
+[; ;main.c: 44:         fmm_add3(sensor[3].Valor);
+[e ( _fmm_add3 (1 . *U + &U _sensor * -> -> -> 3 `i `ui `ux -> -> # *U &U _sensor `ui `ux 1 ]
 "46
-[; ;main.c: 46:         }
-}
-[e :U 143 ]
+[; ;main.c: 46:         lcd_num(0,14, (int)canal, 1 );
+[e ( _lcd_num (4 , , , -> -> 0 `i `uc -> -> 14 `i `uc _canal -> -> 1 `i `uc ]
 "47
-[; ;main.c: 47:         if (tecla_decrementar_descida() )
-[e $ ! != -> ( _tecla_decrementar_descida ..  `i -> 0 `i 144  ]
+[; ;main.c: 47:         if( !--refresh )
+[e $ ! ! != =- _refresh -> -> 1 `i `l -> -> 0 `i `l 143  ]
 "48
 [; ;main.c: 48:         {
 {
 "49
-[; ;main.c: 49:             canal = --canal % 4;
-[e = _canal % =- _canal -> 1 `i -> 4 `i ]
+[; ;main.c: 49:             refresh = 50;
+[e = _refresh -> -> 50 `i `l ]
 "50
-[; ;main.c: 50:         }
+[; ;main.c: 50:             lcd_num(1, 8, fmm_media (), 3);
+[e ( _lcd_num (4 , , , -> -> 1 `i `uc -> -> 8 `i `uc ( _fmm_media ..  -> -> 3 `i `uc ]
+"51
+[; ;main.c: 51:             lcd_num(1, 8, fmm_media1(), 3);
+[e ( _lcd_num (4 , , , -> -> 1 `i `uc -> -> 8 `i `uc ( _fmm_media1 ..  -> -> 3 `i `uc ]
+"52
+[; ;main.c: 52:             lcd_num(1, 8, fmm_media2(), 3);
+[e ( _lcd_num (4 , , , -> -> 1 `i `uc -> -> 8 `i `uc ( _fmm_media2 ..  -> -> 3 `i `uc ]
+"53
+[; ;main.c: 53:             lcd_num(1, 8, fmm_media3(), 3);
+[e ( _lcd_num (4 , , , -> -> 1 `i `uc -> -> 8 `i `uc ( _fmm_media3 ..  -> -> 3 `i `uc ]
+"54
+[; ;main.c: 54:         }
+}
+[e :U 143 ]
+"56
+[; ;main.c: 56:         if (tecla_incrementar_subida() )
+[e $ ! != -> ( _tecla_incrementar_subida ..  `i -> 0 `i 144  ]
+"57
+[; ;main.c: 57:         {
+{
+"58
+[; ;main.c: 58:             canal = ++canal % 4;
+[e = _canal % =+ _canal -> 1 `i -> 4 `i ]
+"59
+[; ;main.c: 59:         }
 }
 [e :U 144 ]
-"51
-[; ;main.c: 51:         for( char i=0; i<4; i++ )
+"60
+[; ;main.c: 60:         if (tecla_decrementar_descida() )
+[e $ ! != -> ( _tecla_decrementar_descida ..  `i -> 0 `i 145  ]
+"61
+[; ;main.c: 61:         {
+{
+"62
+[; ;main.c: 62:             canal = --canal % 4;
+[e = _canal % =- _canal -> 1 `i -> 4 `i ]
+"63
+[; ;main.c: 63:         }
+}
+[e :U 145 ]
+"66
+[; ;main.c: 66:         for( char i=0; i<4; i++ )
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 145  ]
-[e $U 146  ]
-[e :U 145 ]
-"52
-[; ;main.c: 52:             led_monitorar(&sensor[i]);
+[e $ < -> _i `i -> 4 `i 146  ]
+[e $U 147  ]
+[e :U 146 ]
+"67
+[; ;main.c: 67:             led_monitorar(&sensor[i]);
 [e ( _led_monitorar (1 &U *U + &U _sensor * -> _i `ux -> -> # *U &U _sensor `ui `ux ]
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 145  ]
-[e :U 146 ]
+[e $ < -> _i `i -> 4 `i 146  ]
+[e :U 147 ]
 }
-"53
-[; ;main.c: 53:     }
+"68
+[; ;main.c: 68:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"54
-[; ;main.c: 54: }
+"69
+[; ;main.c: 69: }
 [e :UE 139 ]
 }
 [a 1C 84 101 109 112 46 32 83 101 110 115 111 114 58 32 32 32 0 ]

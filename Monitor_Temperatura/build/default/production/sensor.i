@@ -2553,6 +2553,7 @@ struct sensor_t
 
 
 void sensor_init (struct sensor_t *ptr, char ch, int tmin, int tmax, int alvo, char aceitavel, char toleravel);
+char sensor_value (struct sensor_t *ptr);
 void sensor_read (struct sensor_t *ptr, char ch);
 void sensor_readAll (struct sensor_t *ptr, char n);
 void sensor_setAlert (struct sensor_t * ptr, char p);
@@ -2562,7 +2563,6 @@ char sensor_alert (struct sensor_t * ptr);
 char sensor_danger (struct sensor_t * ptr);
 int sensor_delta (struct sensor_t * ptr);
 # 5 "sensor.c" 2
-
 
 
 
@@ -2589,7 +2589,6 @@ void sensor_readAll(struct sensor_t *ptr, char n )
     for( i=0; i<n; i++ )
         (ptr+i)->Valor = ( ( (ADC_read((ptr+i)->CH) + 1) * (long)( (ptr+i)->Tmax - (ptr+i)->Tmin)>>10 ) + (ptr+i)->Tmin);
 }
-
 
 void sensor_setAlert( struct sensor_t * ptr, char p )
 {

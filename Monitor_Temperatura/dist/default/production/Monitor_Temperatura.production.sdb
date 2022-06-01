@@ -7,6 +7,8 @@
 [v _analog_init analog_init `(v  1 e 1 0 ]
 "16
 [v _ADC_read ADC_read `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\awmod.c
@@ -25,6 +27,22 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"17 F:\Monitor_Temperatura\fmm.c
+[v _fmm_add fmm_add `(i  1 e 2 0 ]
+"28
+[v _fmm_media fmm_media `(i  1 e 2 0 ]
+"33
+[v _fmm_add1 fmm_add1 `(i  1 e 2 0 ]
+"44
+[v _fmm_media1 fmm_media1 `(i  1 e 2 0 ]
+"49
+[v _fmm_add2 fmm_add2 `(i  1 e 2 0 ]
+"60
+[v _fmm_media2 fmm_media2 `(i  1 e 2 0 ]
+"65
+[v _fmm_add3 fmm_add3 `(i  1 e 2 0 ]
+"76
+[v _fmm_media3 fmm_media3 `(i  1 e 2 0 ]
 "68 F:\Monitor_Temperatura\lcd.c
 [v _lcd_inst lcd_inst `(v  1 e 1 0 ]
 "100
@@ -41,15 +59,15 @@
 [v _led_init led_init `(v  1 e 1 0 ]
 "28
 [v _led_monitorar led_monitorar `(v  1 e 1 0 ]
-"19 F:\Monitor_Temperatura\main.c
+"21 F:\Monitor_Temperatura\main.c
 [v _main main `(v  1 e 1 0 ]
-"10 F:\Monitor_Temperatura\sensor.c
+"9 F:\Monitor_Temperatura\sensor.c
 [v _sensor_init sensor_init `(v  1 e 1 0 ]
-"26
+"25
 [v _sensor_readAll sensor_readAll `(v  1 e 1 0 ]
-"46
+"44
 [v _sensor_alert sensor_alert `(uc  1 e 1 0 ]
-"60
+"58
 [v _sensor_danger sensor_danger `(uc  1 e 1 0 ]
 "19 F:\Monitor_Temperatura\teclas.c
 [v _teclas_init teclas_init `(v  1 e 1 0 ]
@@ -57,7 +75,19 @@
 [v _tecla_incrementar_subida tecla_incrementar_subida `(uc  1 e 1 0 ]
 "79
 [v _tecla_decrementar_descida tecla_decrementar_descida `(uc  1 e 1 0 ]
-[s S364 . 1 `uc 1 RC0 1 0 :1:0 
+[s S401 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"245 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[u S410 . 1 `S401 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES410  1 e 1 @6 ]
+[s S496 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -66,9 +96,9 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-"307 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[u S373 . 1 `S364 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES373  1 e 1 @7 ]
+"307
+[u S505 . 1 `S496 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES505  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S108 . 1 `uc 1 RD0 1 0 :1:0 
@@ -108,7 +138,19 @@
 ]
 [u S43 . 1 `S23 1 . 1 0 `S28 1 . 1 0 `S37 1 . 1 0 `S40 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES43  1 e 1 @31 ]
-[s S385 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S422 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1495
+[u S431 . 1 `S422 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES431  1 e 1 @134 ]
+[s S475 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -118,8 +160,8 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S394 . 1 `S385 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES394  1 e 1 @135 ]
+[u S484 . 1 `S475 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES484  1 e 1 @135 ]
 [s S136 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
@@ -145,21 +187,29 @@
 [v _ADCON1bits ADCON1bits `VES75  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"13 F:\Monitor_Temperatura\fmm.c
+[v _acc_temp acc_temp `l  1 e 4 0 ]
+"14
+[v _fmm_temp fmm_temp `[11]i  1 e 22 0 ]
+"15
+[v _fmm_temp_indice fmm_temp_indice `i  1 e 2 0 ]
 [s S198 sensor_t 12 `i 1 CH 2 0 `i 1 Valor 2 2 `i 1 Alvo 2 4 `i 1 Tmin 2 6 `i 1 Tmax 2 8 `uc 1 aceitavel 1 10 `uc 1 toleravel 1 11 ]
-"16 F:\Monitor_Temperatura\main.c
+"17 F:\Monitor_Temperatura\main.c
 [v _sensor sensor `[4]S198  1 e 48 0 ]
-"17
+"18
 [v _canal canal `i  1 e 2 0 ]
 "25 F:\Monitor_Temperatura\teclas.c
 [v _incrementar_anterior incrementar_anterior `uc  1 e 1 0 ]
 "59
 [v _decrementar_anterior decrementar_anterior `uc  1 e 1 0 ]
-"19 F:\Monitor_Temperatura\main.c
+"21 F:\Monitor_Temperatura\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"51
-[v main@i i `uc  1 a 1 45 ]
-"54
+"66
+[v main@i i `uc  1 a 1 49 ]
+"23
+[v main@refresh refresh `l  1 a 4 45 ]
+"69
 } 0
 "19 F:\Monitor_Temperatura\teclas.c
 [v _teclas_init teclas_init `(v  1 e 1 0 ]
@@ -176,20 +226,20 @@
 {
 "91
 } 0
-"26 F:\Monitor_Temperatura\sensor.c
+"25 F:\Monitor_Temperatura\sensor.c
 [v _sensor_readAll sensor_readAll `(v  1 e 1 0 ]
 {
 [s S198 sensor_t 12 `i 1 CH 2 0 `i 1 Valor 2 2 `i 1 Alvo 2 4 `i 1 Tmin 2 6 `i 1 Tmax 2 8 `uc 1 aceitavel 1 10 `uc 1 toleravel 1 11 ]
 [v sensor_readAll@ptr ptr `*.4S198  1 a 1 wreg ]
-"28
+"27
 [v sensor_readAll@i i `uc  1 a 1 41 ]
-"26
+"25
 [v sensor_readAll@ptr ptr `*.4S198  1 a 1 wreg ]
 [v sensor_readAll@n n `uc  1 p 1 8 ]
-"29
-"26
+"28
+"25
 [v sensor_readAll@ptr ptr `*.4S198  1 a 1 40 ]
-"31
+"30
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -213,7 +263,7 @@
 [v ADC_read@canais canais `uc  1 a 1 8 ]
 "28
 } 0
-"10 F:\Monitor_Temperatura\sensor.c
+"9 F:\Monitor_Temperatura\sensor.c
 [v _sensor_init sensor_init `(v  1 e 1 0 ]
 {
 [s S198 sensor_t 12 `i 1 CH 2 0 `i 1 Valor 2 2 `i 1 Alvo 2 4 `i 1 Tmin 2 6 `i 1 Tmax 2 8 `uc 1 aceitavel 1 10 `uc 1 toleravel 1 11 ]
@@ -225,10 +275,10 @@
 [v sensor_init@alvo alvo `i  1 p 2 9 ]
 [v sensor_init@aceitavel aceitavel `uc  1 p 1 11 ]
 [v sensor_init@toleravel toleravel `uc  1 p 1 12 ]
-"12
-"10
+"11
+"9
 [v sensor_init@ptr ptr `*.4S198  1 a 1 13 ]
-"18
+"17
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
@@ -254,35 +304,35 @@
 [v led_monitorar@ptr ptr `*.4S198  1 a 1 9 ]
 "50
 } 0
-"60 F:\Monitor_Temperatura\sensor.c
+"58 F:\Monitor_Temperatura\sensor.c
 [v _sensor_danger sensor_danger `(uc  1 e 1 0 ]
 {
 [s S198 sensor_t 12 `i 1 CH 2 0 `i 1 Valor 2 2 `i 1 Alvo 2 4 `i 1 Tmin 2 6 `i 1 Tmax 2 8 `uc 1 aceitavel 1 10 `uc 1 toleravel 1 11 ]
 [v sensor_danger@ptr ptr `*.4S198  1 a 1 wreg ]
-"62
+"60
 [v sensor_danger@max max `i  1 a 2 6 ]
 [v sensor_danger@min min `i  1 a 2 4 ]
-"60
+"58
 [v sensor_danger@ptr ptr `*.4S198  1 a 1 wreg ]
-"64
-"60
+"62
+"58
 [v sensor_danger@ptr ptr `*.4S198  1 a 1 8 ]
-"73
+"71
 } 0
-"46
+"44
 [v _sensor_alert sensor_alert `(uc  1 e 1 0 ]
 {
 [s S198 sensor_t 12 `i 1 CH 2 0 `i 1 Valor 2 2 `i 1 Alvo 2 4 `i 1 Tmin 2 6 `i 1 Tmax 2 8 `uc 1 aceitavel 1 10 `uc 1 toleravel 1 11 ]
 [v sensor_alert@ptr ptr `*.4S198  1 a 1 wreg ]
-"48
+"46
 [v sensor_alert@max max `i  1 a 2 6 ]
 [v sensor_alert@min min `i  1 a 2 4 ]
-"46
+"44
 [v sensor_alert@ptr ptr `*.4S198  1 a 1 wreg ]
-"50
-"46
+"48
+"44
 [v sensor_alert@ptr ptr `*.4S198  1 a 1 8 ]
-"59
+"57
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -318,19 +368,19 @@
 {
 [v lcd_num@lin lin `uc  1 a 1 wreg ]
 "185
-[v lcd_num@div div `i  1 a 2 11 ]
+[v lcd_num@div div `i  1 a 2 15 ]
 "187
-[v lcd_num@sinal sinal `uc  1 a 1 10 ]
+[v lcd_num@sinal sinal `uc  1 a 1 14 ]
 "186
-[v lcd_num@size size `uc  1 a 1 9 ]
+[v lcd_num@size size `uc  1 a 1 13 ]
 "182
 [v lcd_num@lin lin `uc  1 a 1 wreg ]
-[v lcd_num@col col `uc  1 p 1 4 ]
+[v lcd_num@col col `uc  1 p 1 8 ]
 "183
-[v lcd_num@num num `i  1 p 2 5 ]
-[v lcd_num@tam tam `uc  1 p 1 7 ]
+[v lcd_num@num num `i  1 p 2 9 ]
+[v lcd_num@tam tam `uc  1 p 1 11 ]
 "189
-[v lcd_num@lin lin `uc  1 a 1 8 ]
+[v lcd_num@lin lin `uc  1 a 1 12 ]
 "222
 } 0
 "116
@@ -351,17 +401,6 @@
 "102
 [v lcd_data@d d `uc  1 a 1 2 ]
 "113
-} 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 6 ]
-[v ___awmod@counter counter `uc  1 a 1 5 ]
-"5
-[v ___awmod@divisor divisor `i  1 p 2 0 ]
-[v ___awmod@dividend dividend `i  1 p 2 2 ]
-"34
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -389,6 +428,86 @@
 "70
 [v lcd_inst@i i `uc  1 a 1 2 ]
 "97
+} 0
+"76 F:\Monitor_Temperatura\fmm.c
+[v _fmm_media3 fmm_media3 `(i  1 e 2 0 ]
+{
+"79
+} 0
+"60
+[v _fmm_media2 fmm_media2 `(i  1 e 2 0 ]
+{
+"63
+} 0
+"44
+[v _fmm_media1 fmm_media1 `(i  1 e 2 0 ]
+{
+"47
+} 0
+"28
+[v _fmm_media fmm_media `(i  1 e 2 0 ]
+{
+"31
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 2 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 1 ]
+[v ___aldiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 0 ]
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
+} 0
+"65 F:\Monitor_Temperatura\fmm.c
+[v _fmm_add3 fmm_add3 `(i  1 e 2 0 ]
+{
+"67
+[v fmm_add3@i i `i  1 a 2 9 ]
+"65
+[v fmm_add3@valor valor `i  1 p 2 7 ]
+"74
+} 0
+"49
+[v _fmm_add2 fmm_add2 `(i  1 e 2 0 ]
+{
+"51
+[v fmm_add2@i i `i  1 a 2 9 ]
+"49
+[v fmm_add2@valor valor `i  1 p 2 7 ]
+"58
+} 0
+"33
+[v _fmm_add1 fmm_add1 `(i  1 e 2 0 ]
+{
+"35
+[v fmm_add1@i i `i  1 a 2 9 ]
+"33
+[v fmm_add1@valor valor `i  1 p 2 7 ]
+"42
+} 0
+"17
+[v _fmm_add fmm_add `(i  1 e 2 0 ]
+{
+"19
+[v fmm_add@i i `i  1 a 2 9 ]
+"17
+[v fmm_add@valor valor `i  1 p 2 7 ]
+"26
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
 } 0
 "7 F:\Monitor_Temperatura\analog.c
 [v _analog_init analog_init `(v  1 e 1 0 ]

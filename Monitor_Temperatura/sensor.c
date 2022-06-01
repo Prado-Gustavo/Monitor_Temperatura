@@ -6,7 +6,6 @@
 
 //funções
 
-
 void sensor_init(struct sensor_t * ptr, char ch, int tmin, int tmax, int alvo, char aceitavel, char toleravel)
 {
     (ptr+ch)->CH = ch;
@@ -29,7 +28,6 @@ void sensor_readAll(struct sensor_t *ptr, char n )
     for( i=0; i<n; i++ )
         (ptr+i)->Valor = (  ( (ADC_read((ptr+i)->CH) + 1) * (long)( (ptr+i)->Tmax - (ptr+i)->Tmin)>>10 ) + (ptr+i)->Tmin);
 }
-
 
 void sensor_setAlert( struct sensor_t * ptr, char p )
 {

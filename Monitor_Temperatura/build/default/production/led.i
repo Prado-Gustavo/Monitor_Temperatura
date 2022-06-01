@@ -2553,6 +2553,7 @@ struct sensor_t
 
 
 void sensor_init (struct sensor_t *ptr, char ch, int tmin, int tmax, int alvo, char aceitavel, char toleravel);
+char sensor_value (struct sensor_t *ptr);
 void sensor_read (struct sensor_t *ptr, char ch);
 void sensor_readAll (struct sensor_t *ptr, char n);
 void sensor_setAlert (struct sensor_t * ptr, char p);
@@ -2576,42 +2577,42 @@ void led_condition (struct sensor_t *ptr, char l);
 void led_init (void)
 {
 
-    PORTCbits.RC0 = 0;
-    PORTCbits.RC1 = 0;
-    PORTCbits.RC2 = 0;
+    PORTBbits.RB0 = 0;
+    PORTBbits.RB1 = 0;
+    PORTBbits.RB2 = 0;
 
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-    TRISCbits.TRISC2 = 0;
+    TRISBbits.TRISB0 = 0;
+    TRISBbits.TRISB1 = 0;
+    TRISBbits.TRISB2 = 0;
 }
 
 void led_reset (void)
 {
-    PORTCbits.RC0 = 0;
-    PORTCbits.RC1 = 0;
-    PORTCbits.RC2 = 0;
+    PORTBbits.RB0 = 0;
+    PORTBbits.RB1 = 0;
+    PORTBbits.RB2 = 0;
 
 }
 void led_monitorar(struct sensor_t * ptr )
 {
         if( sensor_danger ( ptr ) && sensor_alert (ptr) )
         {
-            PORTCbits.RC0 = 0;
-            PORTCbits.RC1 = 0;
-            PORTCbits.RC2 = 1;
+            PORTBbits.RB0 = 0;
+            PORTBbits.RB1 = 0;
+            PORTBbits.RB2 = 1;
 
         }
         else if(sensor_alert( ptr) && !sensor_danger (ptr))
         {
-            PORTCbits.RC0 = 0;
-            PORTCbits.RC2 = 0;
-            PORTCbits.RC1 = 1;
+            PORTBbits.RB0 = 0;
+            PORTBbits.RB2 = 0;
+            PORTBbits.RB1 = 1;
         }
         else
         {
-            PORTCbits.RC0 = 1;
-            PORTCbits.RC1 = 0;
-            PORTCbits.RC2 = 0;
+            PORTBbits.RB0 = 1;
+            PORTBbits.RB1 = 0;
+            PORTBbits.RB2 = 0;
         }
 
 }

@@ -1,4 +1,4 @@
-# 1 "analog.c"
+# 1 "fmm.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "analog.c" 2
+# 1 "fmm.c" 2
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2491,99 +2499,89 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 1 "analog.c" 2
+# 9 "fmm.c" 2
 
-# 1 "./analog.h" 1
-# 39 "./analog.h"
-void analog_init (void);
-unsigned int ADC_read (unsigned char canais);
-unsigned int Valor_ADC (void);
-# 2 "analog.c" 2
+# 1 "./fmm.h" 1
+# 13 "./fmm.h"
+int fmm_add( int valor );
+int fmm_media( void );
 
-# 1 "./config.h" 1
+int fmm_add1( int valor );
+int fmm_media1( void );
 
+int fmm_add2( int valor );
+int fmm_media2( void );
 
-
-
-
-
-
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 3 "analog.c" 2
-
-# 1 "./lcd.h" 1
+int fmm_add3( int valor );
+int fmm_media3( void );
+# 10 "fmm.c" 2
 
 
 
+long acc_temp = 0;
+int fmm_temp[11] = { 0 };
+int fmm_temp_indice = 0;
 
-void lcd_init (void);
-void lcd_clear (void);
-void lcd_print (unsigned char lin, unsigned char col, const char *str);
-void lcd_num (unsigned char lin, unsigned char col, int num, unsigned char tam);
-# 4 "analog.c" 2
-
-# 1 "./sensor.h" 1
-
-
-
-
-struct sensor_t
+int fmm_add( int valor )
 {
-    int CH;
-    int Valor;
-    int Alvo;
-    int Tmin;
-    int Tmax;
-    char aceitavel;
-    char toleravel;
-};
-
-
-void sensor_init (struct sensor_t *ptr, char ch, int tmin, int tmax, int alvo, char aceitavel, char toleravel);
-char sensor_value (struct sensor_t *ptr);
-void sensor_read (struct sensor_t *ptr, char ch);
-void sensor_readAll (struct sensor_t *ptr, char n);
-void sensor_setAlert (struct sensor_t * ptr, char p);
-void sensor_setDanger (struct sensor_t * ptr, char p);
-void sensor_setAlvo (struct sensor_t * ptr, int alvo);
-char sensor_alert (struct sensor_t * ptr);
-char sensor_danger (struct sensor_t * ptr);
-int sensor_delta (struct sensor_t * ptr);
-# 5 "analog.c" 2
-
-
-void analog_init (void)
-{
-    ANSEL = 0x0F;
-    ADCON0bits.ADCS = 0x1;
-    ADCON0bits.ADON = 1;
-    ADCON1bits.ADFM = 1;
-    ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 0;
+    int i;
+    i = fmm_temp_indice;
+    acc_temp -= fmm_temp[i];
+    fmm_temp[i] = valor;
+    acc_temp += valor;
+    fmm_temp_indice = (i+1) % 11;
+    return( i );
 }
-unsigned int ADC_read (unsigned char canais)
+
+int fmm_media( void )
 {
-    unsigned int Valor_ADC = 0;
-    ADCON0bits.CHS = canais < 4 ? canais : 0;
-    ADCON0bits.GO = 1;
+    return( acc_temp / 11 );
+}
 
+int fmm_add1( int valor )
+{
+    int i;
+    i = fmm_temp_indice;
+    acc_temp -= fmm_temp[i];
+    fmm_temp[i] = valor;
+    acc_temp += valor;
+    fmm_temp_indice = (i+1) % 11;
+    return( i );
+}
 
-    while (ADCON0bits.GO);
-    Valor_ADC = ADRESH;
-    Valor_ADC <<=8;
-    Valor_ADC += ADRESL;
-    return (Valor_ADC);
+int fmm_media1( void )
+{
+    return( acc_temp / 11 );
+}
+
+int fmm_add2( int valor )
+{
+    int i;
+    i = fmm_temp_indice;
+    acc_temp -= fmm_temp[i];
+    fmm_temp[i] = valor;
+    acc_temp += valor;
+    fmm_temp_indice = (i+1) % 11;
+    return( i );
+}
+
+int fmm_media2( void )
+{
+    return( acc_temp / 11 );
+}
+
+int fmm_add3( int valor )
+{
+    int i;
+    i = fmm_temp_indice;
+    acc_temp -= fmm_temp[i];
+    fmm_temp[i] = valor;
+    acc_temp += valor;
+    fmm_temp_indice = (i+1) % 11;
+    return( i );
+}
+
+int fmm_media3( void )
+{
+    return( acc_temp / 11 );
 }

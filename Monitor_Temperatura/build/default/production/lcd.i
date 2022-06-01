@@ -2553,6 +2553,7 @@ struct sensor_t
 
 
 void sensor_init (struct sensor_t *ptr, char ch, int tmin, int tmax, int alvo, char aceitavel, char toleravel);
+char sensor_value (struct sensor_t *ptr);
 void sensor_read (struct sensor_t *ptr, char ch);
 void sensor_readAll (struct sensor_t *ptr, char n);
 void sensor_setAlert (struct sensor_t * ptr, char p);
@@ -2565,49 +2566,49 @@ int sensor_delta (struct sensor_t * ptr);
 # 68 "lcd.c"
 void lcd_inst (unsigned char i)
 {
-    PORTDbits.RD2 = 0;
-    PORTD = ((PORTD & 0x0F)|(i>>4<<4));
+    PORTDbits.RD4 = 0;
+    PORTD = ((PORTD & 0xF0)|(i>>4 & 0x0F));
 
-    PORTDbits.RD3 =0;
+    PORTDbits.RD5 =0;
     if ( i == 0x01 || i == 0x02 )
         _delay((unsigned long)((2)*(20000000/4000.0)));
     else
         _delay((unsigned long)((40)*(20000000/4000000.0)));
-    PORTDbits.RD3 = 1;
+    PORTDbits.RD5 = 1;
 
     if ( (i & 0xF0) == (0x20 | 0x00) )
     {
-        PORTDbits.RD2 = 0;
-        PORTD = ((PORTD & 0x0F)|(i>>4<<4));
-        PORTDbits.RD3 = 0;
+        PORTDbits.RD4 = 0;
+        PORTD = ((PORTD & 0xF0)|(i>>4 & 0x0F));
+        PORTDbits.RD5 = 0;
         _delay((unsigned long)((40)*(20000000/4000000.0)));
-        PORTDbits.RD3 = 1;
+        PORTDbits.RD5 = 1;
     }
 
-    PORTDbits.RD2 = 0;
-    PORTD = ((PORTD & 0x0F)|(i<<4));
-    PORTDbits.RD3 = 0;
+    PORTDbits.RD4 = 0;
+    PORTD = ((PORTD & 0xF0)|(i & 0x0F));
+    PORTDbits.RD5 = 0;
     if ( i==0x01 || i == 0x02 )
         _delay((unsigned long)((2)*(20000000/4000.0)));
     else
         _delay((unsigned long)((40)*(20000000/4000000.0)));
-    PORTDbits.RD3 = 1;
+    PORTDbits.RD5 = 1;
 }
 
 
 void lcd_data (unsigned char d)
 {
-    PORTDbits.RD2 = 1;
-    PORTD = ((PORTD & 0x0F)|(d>>4<<4));
-    PORTDbits.RD3 = 0;
+    PORTDbits.RD4 = 1;
+    PORTD = ((PORTD & 0xF0)|(d>>4 & 0x0F));
+    PORTDbits.RD5 = 0;
     _delay((unsigned long)((40)*(20000000/4000000.0)));
-    PORTDbits.RD3 = 1;
+    PORTDbits.RD5 = 1;
 
-    PORTDbits.RD2 = 1;
-    PORTD = ((PORTD & 0x0F)|(d<<4));
-    PORTDbits.RD3 = 0;
+    PORTDbits.RD4 = 1;
+    PORTD = ((PORTD & 0xF0)|(d & 0x0F));
+    PORTDbits.RD5 = 0;
     _delay((unsigned long)((40)*(20000000/4000000.0)));
-    PORTDbits.RD3 = 1;
+    PORTDbits.RD5 = 1;
 }
 
 
@@ -2620,19 +2621,21 @@ void lcd_lincol ( unsigned char lin, unsigned char col)
 void lcd_init (void)
 {
     _delay((unsigned long)((100)*(20000000/4000.0)));
-# 141 "lcd.c"
-       TRISDbits.TRISD0 = 1;
-       TRISDbits.TRISD1 = 1;
+
+
+
+
+       TRISDbits.TRISD0 = 0;
+       TRISDbits.TRISD1 = 0;
        TRISDbits.TRISD2 = 0;
        TRISDbits.TRISD3 = 0;
        TRISDbits.TRISD4 = 0;
        TRISDbits.TRISD5 = 0;
        TRISDbits.TRISD6 = 0;
        TRISDbits.TRISD7 = 0;
-
-
+# 151 "lcd.c"
     _delay((unsigned long)((100)*(20000000/4000.0)));
-    PORTDbits.RD3 = 1;
+    PORTDbits.RD5 = 1;
     lcd_inst( 0x20|0x00|0x08 );
     lcd_inst( 0x08|0x04|0x00|0x00 );
     lcd_inst( 0x01 );

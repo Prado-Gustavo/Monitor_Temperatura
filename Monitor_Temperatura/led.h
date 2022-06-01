@@ -2,9 +2,9 @@
 #define LED_H
 
 // definição de nomes
-#define  LED_VD     PORTCbits.RC0
-#define  LED_AM     PORTCbits.RC1
-#define  LED_VM     PORTCbits.RC2
+#define  LED_VD     PORTBbits.RB0
+#define  LED_AM     PORTBbits.RB1
+#define  LED_VM     PORTBbits.RB2
 
 //funções
 void led_init      (void);

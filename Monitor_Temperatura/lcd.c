@@ -5,7 +5,7 @@
 #include "sensor.h"
 //Definição Porte e pinos
 
-//#define LCD_IHM 	//definição de ligação de LCD - lIGAÇÃO FÍSICA
+#define LCD_IHM 	//definição de ligação de LCD - lIGAÇÃO FÍSICA
 
 #ifdef LCD_IHM			//LCD com ligação invertida
 

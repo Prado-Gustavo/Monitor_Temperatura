@@ -13,9 +13,9 @@ void led_init (void) //inicialização
     LED_AM = 0;
     LED_VM = 0;
     
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-    TRISCbits.TRISC2 = 0;
+    TRISBbits.TRISB0 = 0;
+    TRISBbits.TRISB1 = 0;
+    TRISBbits.TRISB2 = 0;
 }
 
 void led_reset (void)
