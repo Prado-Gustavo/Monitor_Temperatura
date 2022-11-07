@@ -22,7 +22,7 @@ O amplificador operacional (ou amp. op.) é um componente eletrônico que, como 
 
 ## Tabela de alocação de pinos 
 
-|pino|PORT|Função| |pino|PORT|Função| |pino|PORT|Função|         |pino|PORT|Função|  	  		
+|PINO|PORT|FUNÇÃO| |PINO|PORT|FUNÇÃO| |PINO|PORT|FUNÇÃO|         |PINO|PORT|FUNÇÃO|  	  		
 |:--:|:--:|:--:|--|:---:|:--:|:--:|   --|:---:|:--:|:--:|        --|:---:|:--:|:--:|
 | 1 | RE3 | ||  11| VDD |  |          | 21 | RD2 | D6 LCD |      |  31| VSS  |
 | 2 | RA0 | Sensor-1 | | 12 | VSS |  || 22 | RD3 | D7 LCD |      | 32 | VDD |  |
